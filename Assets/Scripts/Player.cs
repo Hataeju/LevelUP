@@ -5,6 +5,8 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Player : MonoBehaviour
 {
+    const float Create_Position_Y = -3f;
+
     Camera mainCamera;
 
     [Header("마우스 따라오는 감도 (높은 수록 빠르게 따라옴)")]
@@ -22,8 +24,8 @@ public class Player : MonoBehaviour
     {
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
-        mousePosition.z = 0;
-
+        mousePosition.y = Create_Position_Y;
+        mousePosition.z = -3;
         transform.position = Vector3.Lerp(transform.position, mousePosition, mouseSensitivity);
     }
 }
