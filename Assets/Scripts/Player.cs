@@ -24,8 +24,19 @@ public class Player : MonoBehaviour
     {
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
+        float borderLeft = -4.25f + transform.localScale.x / 2;
+        float borderRight = 4.25f - transform.localScale.x / 2;
+
         mousePosition.y = Create_Position_Y;
         mousePosition.z = -3;
+        if (mousePosition.x < borderLeft)
+        {
+            mousePosition.x = borderLeft;
+        }
+        else if (mousePosition.x > borderRight)
+        {
+            mousePosition.x = borderRight;
+        }
         transform.position = Vector3.Lerp(transform.position, mousePosition, mouseSensitivity);
     }
 }
