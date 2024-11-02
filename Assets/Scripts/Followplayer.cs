@@ -18,6 +18,7 @@ public class Followplayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //WorldtoScreenPoint를 통해 월드 오브젝트 player의위치 가져오기
         Vector3 playerpositon = mainCamera.WorldToScreenPoint(player.position);
 
         trans.position = playerpositon;

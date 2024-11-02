@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 // Update is called once per frame
     void Update()
     {
+        
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
         float borderLeft = -4.25f + transform.localScale.x / 2;
