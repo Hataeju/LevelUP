@@ -40,4 +40,12 @@ public class Player : MonoBehaviour
         }
         transform.position = Vector3.Lerp(transform.position, mousePosition, mouseSensitivity);
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Monster"))
+        {
+           
+        }
+    }
 }

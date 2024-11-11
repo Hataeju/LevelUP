@@ -5,8 +5,16 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
+    private static Level instance = null;
+    public static Level Instance { get { return instance; } }
     public TextMeshProUGUI tmpNumber;
     public int tmp = 1;
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+
+    }
 
     // Start is called before the first frame update
     void Start()
