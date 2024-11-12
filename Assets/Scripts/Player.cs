@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     const float Create_Position_Y = -3f;
 
+    public int level;
+
     Camera mainCamera;
 
     [Header("마우스 따라오는 감도 (높은 수록 빠르게 따라옴)")]
@@ -17,6 +19,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
+        level = 5;
+        Level.Instance.tmpNumber.text = level.ToString();
     }
 
 // Update is called once per frame
