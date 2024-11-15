@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("test1");
         mainCamera = Camera.main;
         level = 5;
         Level.Instance.tmpNumber.text = level.ToString();
@@ -43,13 +44,24 @@ public class Player : MonoBehaviour
             mousePosition.x = borderRight;
         }
         transform.position = Vector3.Lerp(transform.position, mousePosition, mouseSensitivity);
+
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    /*private void OnTriggerEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Monster"))
         {
-           
+            level++;
+            Level.Instance.tmpNumber.text = level.ToString();
+        }
+    }*/
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Monster"))
+        {
+            level++;
+            Level.Instance.tmpNumber.text = level.ToString();
         }
     }
 }
